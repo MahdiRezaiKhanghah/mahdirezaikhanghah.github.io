@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en"> <!-- تغییر زبان به انگلیسی -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rezaikhanghah</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+<!-- Header -->
+<header>
+  <div class="header-content">
+    <img src="photo_2024-11-14_09-38-57.jpg" alt="Profile Picture" class="profile-pic">
+    <div class="logo">REZAIKHANGHAH</div>
+    <div class="hamburger-menu" onclick="toggleMenu()">&#9776;</div>
+  </div>
+  <nav class="navbar">
+    <span class="close-btn" onclick="toggleMenu()">&#10005;</span> <!-- دکمه ضربدر -->
+    <ul class="nav-links">
+      <li><a href="#about">About Me</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#work-area">Work Area</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="overlay"></div>
+  <div class="hero-content">
+    <h1>Hello! I'm Mahdi Rezai Khanghah</h1>
+    <p>Active in programming in the field of medical and healthcare</p>
+    <div class="buttons">
+      <a href="#about" class="btn">About Me</a>
+      <a href="#contact" class="btn secondary">Contact</a>
+    </div>
+  </div>
+</section>
+
+<!--About me section-->
+<section id="about" class="about-section">
+  <div class="section-content">
+    <div class="line"></div>
+    <div class="about-text">
+      <p class="about-text-short">
+        I was born in 1380 (2001) in Khalkhal, a city in the Ardabil province of Iran.
+      </p>
+      <div class="about-text-full">
+        <p>From the beginning of my life, I have been an active and thoughtful person, always daydreaming about various fields.</p>
+        <p>Currently, I am in my eighth semester of studying biomedical engineering at Islamic Azad University, Qazvin.</p>
+        <p>I am passionate about music and sports, living in the world of old-school music.</p>
+        <p>I love challenging myself, always striving for new heights, and continuously learning in every aspect of life.</p>
+        <p>My ultimate goal is to combine my passion for technology with a drive for positive change in the world of healthcare.</p>
+      </div>
+      <button class="show-more-btn" onclick="toggleAboutText()">Show More</button>
+    </div>
+  </div>
+</section>
+
+<!--Education section-->
+<section id="education" style="background-color: #121212; padding: 3rem;">
+  <div class="education-container">
+    <!-- School Education Section -->
+    <div class="education-item">
+      <div class="education-details">
+        <h3>School Education</h3>
+        <p>In Iran, pre-university education lasts 12 years, following a 6-3-3 system: 6 years of primary school, 3 years of middle school, and 3 years of high school, during which students select a specific field of study. I chose the Science track in high school and graduated with a GPA of 16.60.</p>
+      </div>
+      <div class="education-gallery">
+        <div class="gallery-wrapper">
+          <img src="cyber-security-expert-working-with-technology-neon-lights.jpg" alt="School Photo 1" class="gallery-photo">
+          <div class="gallery-controls">
+            <button class="gallery-prev" onclick="prevPhoto('school')">⟨</button>
+            <button class="gallery-next" onclick="nextPhoto('school')">⟩</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- University Education Section -->
+    <div class="education-item">
+      <div class="education-details">
+        <h3>University Education</h3>
+        <p>After completing high school, I enrolled in Azad University of Qazvin, a prominent university in Iran. Currently, I am pursuing a Bachelor's degree in Biomedical Engineering, aiming to complete 148 credits.</p>
+      </div>
+      <div class="education-gallery">
+        <div class="gallery-wrapper">
+          <img src="cyber-security-expert-working-with-technology-neon-lights.jpg" alt="University Photo 1" class="gallery-photo">
+          <div class="gallery-controls">
+            <button class="gallery-prev" onclick="prevPhoto('university')">⟨</button>
+            <button class="gallery-next" onclick="nextPhoto('university')">⟩</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- Future Studies Section -->
+    <div class="education-item">
+      <div class="education-details">
+        <h3>Future Studies</h3>
+        <p>After completing my Bachelor's degree, I aim to pursue a PhD in Neuroscience at Sharif University of Technology, one of the top institutions in Iran.</p>
+      </div>
+      <div class="education-gallery">
+        <div class="gallery-wrapper">
+          <img src="cyber-security-expert-working-with-technology-neon-lights.jpg" alt="Future Study Photo 1" class="gallery-photo">
+          <div class="gallery-controls">
+            <button class="gallery-prev" onclick="prevPhoto('future')">⟨</button>
+            <button class="gallery-next" onclick="nextPhoto('future')">⟩</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--Skills-->
+<section id="skills" style="background-color: #121212; padding: 3rem;">
+    <div class="skills-container">
+        <!-- Skill 1: Python Programming -->
+        <div class="skill-item">
+            <div class="skill-icon">
+                <img src="7810439e-0389-477d-974d-aedd41bc4ecc.webp" alt="Python Icon">
+            </div>
+            <div class="skill-details">
+                <div class="skill-title">
+                    <h3>Python Programming</h3>
+                    <span class="percent">80%</span>
+                </div>
+                <div class="progress-bar" data-percent="80">
+                    <div class="progress-fill"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skill 2: HTML & CSS -->
+        <div class="skill-item">
+            <div class="skill-icon">
+                <img src="7810439e-0389-477d-974d-aedd41bc4ecc.webp" alt="HTML & CSS Icon">
+            </div>
+            <div class="skill-details">
+                <div class="skill-title">
+                    <h3>HTML & CSS</h3>
+                    <span class="percent">100%</span>
+                </div>
+                <div class="progress-bar" data-percent="100">
+                    <div class="progress-fill"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skill 3: Photoshop -->
+        <div class="skill-item">
+            <div class="skill-icon">
+                <img src="7810439e-0389-477d-974d-aedd41bc4ecc.webp" alt="Photoshop Icon">
+            </div>
+            <div class="skill-details">
+                <div class="skill-title">
+                    <h3>Photoshop</h3>
+                    <span class="percent">80%</span>
+                </div>
+                <div class="progress-bar" data-percent="80">
+                    <div class="progress-fill"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skill 4: Private Tutoring -->
+        <div class="skill-item">
+            <div class="skill-icon">
+                <img src="7810439e-0389-477d-974d-aedd41bc4ecc.webp" alt="Private Tutoring Icon">
+            </div>
+            <div class="skill-details">
+                <div class="skill-title">
+                    <h3>Private Tutoring</h3>
+                    <span class="percent">70%</span>
+                </div>
+                <div class="progress-bar" data-percent="70">
+                    <div class="progress-fill"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skill 5: Office (PowerPoint, Word, Excel) -->
+        <div class="skill-item">
+            <div class="skill-icon">
+                <img src="7810439e-0389-477d-974d-aedd41bc4ecc.webp" alt="Office Icon">
+            </div>
+            <div class="skill-details">
+                <div class="skill-title">
+                    <h3>Office (PowerPoint, Word, Excel)</h3>
+                    <span class="percent">100%</span>
+                </div>
+                <div class="progress-bar" data-percent="100">
+                    <div class="progress-fill"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skill 6: Presentation and Public Speaking -->
+        <div class="skill-item">
+            <div class="skill-icon">
+                <img src="7810439e-0389-477d-974d-aedd41bc4ecc.webp" alt="Presentation Icon">
+            </div>
+            <div class="skill-details">
+                <div class="skill-title">
+                    <h3>Presentation and Public Speaking</h3>
+                    <span class="percent">100%</span>
+                </div>
+                <div class="progress-bar" data-percent="100">
+                    <div class="progress-fill"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skill 7: Challenging Thoughts & Mindset -->
+        <div class="skill-item">
+            <div class="skill-icon">
+                <img src="7810439e-0389-477d-974d-aedd41bc4ecc.webp" alt="Challenging Thoughts Icon">
+            </div>
+            <div class="skill-details">
+                <div class="skill-title">
+                    <h3>Challenging Thoughts & Mindset</h3>
+                    <span class="percent">100%</span>
+                </div>
+                <div class="progress-bar" data-percent="100">
+                    <div class="progress-fill"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skill 8: Management & Administration -->
+        <div class="skill-item">
+            <div class="skill-icon">
+                <img src="7810439e-0389-477d-974d-aedd41bc4ecc.webp" alt="Management Icon">
+            </div>
+            <div class="skill-details">
+                <div class="skill-title">
+                    <h3>Management & Administration</h3>
+                    <span class="percent">90%</span>
+                </div>
+                <div class="progress-bar" data-percent="90">
+                    <div class="progress-fill"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ending Quote -->
+        <div class="quote">
+            <p>Skills in living well are important—let’s teach each other the right way.</p>
+        </div>
+    </div>
+</section>
+
+<!--Work area section-->
+<section id="work-area">
+    <div class="work-area-container">
+        <!-- First Row (Left) -->
+        <div class="work-item left">
+            <div class="work-item-content">
+                <h3>Medical Programming</h3>
+                <p>Specialized programming in healthcare applications, focusing on medical data analysis and more...</p>
+            </div>
+            <div class="work-item-image">
+                <img src="beautiful-office-space-cartoon-style.jpg" alt="Medical Programming">
+            </div>
+        </div>
+        <!-- Second Row (Center) -->
+        <div class="work-item center">
+            <div class="work-item-content">
+                <h3>Teaching Programming</h3>
+                <p>Teaching programming for medical technology and healthcare professionals...</p>
+            </div>
+            <div class="work-item-image">
+                <img src="beautiful-office-space-cartoon-style.jpg" alt="Teaching Programming">
+            </div>
+        </div>
+        <!-- Third Row (Right) -->
+        <div class="work-item right">
+            <div class="work-item-content">
+                <h3>Research & Development</h3>
+                <p>Leading research in medical programming, developing solutions to assist healthcare providers...</p>
+            </div>
+            <div class="work-item-image">
+                <img src="beautiful-office-space-cartoon-style.jpg" alt="Research & Development">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--social medea-->
+<section id="contact" class="social-media-section">
+    <div class="social-media-container">
+        <a href="https://t.me/rezaikhanghah" class="social-icon" target="_blank">
+            <i class="fab fa-telegram"></i>
+        </a>
+        <a href="https://www.instagram.com/rezaikhanghah" class="social-icon" target="_blank">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://wa.me/+989196948606" class="social-icon" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="https://github.com/rezaikhanghah" class="social-icon" target="_blank">
+            <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.kaggle.com/rezaikhanghah" class="social-icon" target="_blank">
+            <i class="fab fa-kaggle"></i>
+        </a>
+    </div>
+</section>
+
+<!--Footer-->
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>Contact Information</h3>
+            <ul>
+                <li><a href="mailto:rezaikhanghah@gmail.com">Email: rezaikhanghah@gmail.com</a></li>
+                <li><a href="tel:+98 919 694 8606">Phone: +98 919 694 8606</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#education">Services</a></li>
+                <li><a href="#skills">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#work-area">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; MAHDI REZAI KHANGHAH. All Rights Reserved.</p>
+    </div>
+</footer>
+<script src="/main.js"></script>
+</body>
+</html>

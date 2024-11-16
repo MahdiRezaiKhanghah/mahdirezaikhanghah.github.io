@@ -1,0 +1,1290 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+/* Header Styling */
+/* استایل پایه برای هدر */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #1d1f21;
+    color: white;
+    position: relative;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+/* افکت هاور برای لوگو */
+.logo:hover {
+    color: #f44336;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem;
+    transition: color 0.3s;
+}
+
+/* افکت هاور برای لینک‌ها */
+.nav-links li a:hover {
+    color: #f44336;
+}
+
+/* استایل منوی همبرگری */
+.hamburger-menu {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* پنهان کردن دکمه ضربدر در حالت عادی */
+.close-btn {
+    display: none;
+}
+
+/* حالت موبایل: نمایش منوی همبرگری و پنهان کردن منو اصلی */
+@media (max-width: 768px) {
+    .navbar {
+        display: none; /* پنهان کردن نوار در حالت عادی */
+    }
+
+    .hamburger-menu {
+        display: block; /* نمایش منوی همبرگری */
+        margin-left: auto;
+        position: absolute;
+        right: 1rem; /* چسباندن منوی همبرگری به لبه راست */
+    }
+
+    /* استایل منوی همبرگری باز شده */
+    .navbar.active {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh; /* پوشش کامل ارتفاع صفحه */
+        width: 250px;
+        background-color: #1d1f21;
+        padding: 1rem;
+        z-index: 1000;
+    }
+
+    /* نمایش دکمه ضربدر فقط زمانی که منوی همبرگری فعال است */
+    .navbar.active .close-btn {
+        display: block;
+        align-self: flex-end;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: white;
+        margin-bottom: 1rem;
+    }
+
+    /* اضافه کردن عکس پروفایل و نام به منوی همبرگری */
+    .navbar.active .header-content {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid #333;
+    }
+
+    /* تنظیمات لینک‌ها در حالت عمودی و جداکننده‌ها */
+    .nav-links {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-links li {
+        text-align: left;
+        width: 100%;
+    }
+
+    .nav-links li + li {
+        border-top: 1px solid #333; /* جداکننده بین لینک‌ها */
+        padding-top: 0.5rem;
+    }
+
+    .nav-links li a {
+        display: block;
+        padding: 0.5rem;
+        width: 100%;
+    }
+
+    /* تصویر پروفایل و اندازه لوگو در منوی همبرگری */
+    .navbar.active .profile-pic {
+        width: 40px;
+        height: 40px;
+    }
+
+    .navbar.active .logo {
+        font-size: 1.25rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Hero Section Styling */
+.hero {
+    position: relative;
+    height: 80vh;
+    background-image: url('beautiful-office-space-cartoon-style.jpg'); /* Background Image */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Align text to the left */
+    text-align: left;
+    padding: 0 2rem;
+    scroll-behavior: smooth; /* Smooth scroll animation */
+}
+
+.hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 500px;
+    margin-left: 2rem; /* Move the content left */
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    transition: color 0.3s ease-in-out; /* For smooth hover effect */
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    transition: color 0.3s ease-in-out; /* For smooth hover effect */
+}
+
+.buttons {
+    display: flex;
+    gap: 1rem; /* Adjust gap between buttons */
+    justify-content: flex-start; /* Ensure buttons are spaced out */
+    width: 100%;
+    flex-wrap: wrap; /* Allow buttons to wrap if needed */
+}
+
+.btn {
+    padding: 0.75rem 1.5rem; /* Adjusted padding for normal size */
+    background-color: #f44336;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 1rem; /* Adjusted font size */
+    transition: background-color 0.2s, transform 0.2s ease-in-out; /* Reduced hover animation */
+    width: auto; /* Allow buttons to auto adjust */
+}
+
+/* Secondary button styling */
+.btn.secondary {
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+}
+
+/* Hover effect for buttons (soft and smooth) */
+.btn:hover {
+    background-color: #d32f2f;
+    transform: none; /* Prevent resizing of buttons on hover */
+}
+
+.btn.secondary:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: none; /* Prevent resizing of buttons on hover */
+}
+
+/* Hover effect for text (h1 and p) */
+.hero-content h1:hover,
+.hero-content p:hover {
+    color: #f44336; /* Change text color on hover */
+    transform: scale(1.05); /* Slightly increase text size */
+}
+
+/* Responsive settings for mobile */
+@media (max-width: 768px) {
+    .buttons {
+        flex-direction: row; /* Buttons will be side by side */
+        gap: 0.5rem; /* Adjusted gap between buttons */
+        justify-content: center; /* Center the buttons on mobile */
+        flex-wrap: wrap; /* Allow wrapping if needed */
+    }
+
+    .btn {
+        width: 45%; /* Decreased width of buttons to be side by side */
+        font-size: 0.9rem; /* Smaller text for mobile */
+        padding: 0.6rem 1rem; /* Adjusted padding */
+    }
+
+    .hero-content h1 {
+        font-size: 1.8rem; /* Smaller heading for mobile */
+    }
+
+    .hero-content p {
+        font-size: 1rem; /* Smaller paragraph for mobile */
+    }
+}
+
+/* Responsive settings for tablet */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .hero-content h1 {
+        font-size: 2.2rem; /* Adjusted for tablet */
+    }
+
+    .hero-content p {
+        font-size: 1.1rem; /* Adjusted for tablet */
+    }
+
+    .btn {
+        padding: 0.8rem 1.6rem; /* Adjusted button size */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Section Styling */
+/* استایل بخش درباره من */
+.about-section {
+    padding: 4rem 2rem;
+    background-color: #1d1f21; /* سیاه رنگی که قبلاً استفاده شده */
+    color: #fff;
+    position: relative;
+    background-image: url('https://www.transparenttextures.com/patterns/diamond-weave-light.png'); /* پترن واضح تر */
+    background-size: 150px 150px;
+    background-repeat: repeat;
+    text-align: left; /* متن‌ها چپ چین می‌شوند */
+}
+
+.section-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left; /* متن‌ها چپ چین می‌شوند */
+}
+
+.line {
+    width: 100%;
+    height: 4px; /* عریض‌تر شدن خط جداکننده */
+    background-color: #f44336;
+    margin: 2rem 0;
+    opacity: 0.6;
+}
+
+.about-text {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin: 0 auto;
+    max-width: 750px;
+}
+
+.about-text-short {
+    margin-bottom: 2.5rem; /* فاصله بیشتر برای خط اول */
+    font-weight: 700; /* بولدتر کردن جمله اول */
+    font-size: 1.2rem;
+}
+
+.about-text-full {
+    display: none;
+    margin-top: 1.5rem;
+}
+
+.show-more-btn {
+    background-color: #f44336;
+    color: white;
+    padding: 0.8rem 1.6rem; /* بزرگتر کردن دکمه */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s;
+    margin-top: 2rem;
+    display: block; /* دکمه وسط چین */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.show-more-btn:hover {
+    background-color: #d32f2f;
+}
+
+.about-text p {
+    margin-bottom: 1rem; /* فاصله کمتر برای خطوط بعدی */
+    transition: transform 0.3s ease, color 0.3s ease;
+    line-height: 1.7;
+    direction: ltr; /* چپ چین شدن متن‌ها */
+    text-align: left; /* چپ چین شدن متن‌ها */
+}
+
+/* انیمیشن هاور روی جملات */
+.about-text p:hover {
+    transform: translateX(10px);
+    color: #f44336;
+}
+
+/* استایل برای حالت موبایل */
+@media (max-width: 768px) {
+    .about-section {
+        padding: 3rem 1.5rem;
+    }
+
+    .about-text-short {
+        font-size: 1.1rem;
+    }
+
+    .show-more-btn {
+        font-size: 1rem;
+    }
+}
+
+
+
+
+
+
+
+
+/* Base styles for the Education section */
+#education {
+    background-color: #121212;
+    padding: 3rem;
+}
+
+.education-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center; /* Align the sections to the center */
+}
+
+.education-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #121212; /* Uniform background color */
+    padding: 1.5rem;
+    border-radius: 8px;
+    width: 90%; /* Added width restriction for a more compact design */
+}
+
+.education-details {
+    color: white;
+    flex: 1;
+    font-size: 1.2rem; /* Slightly increased font size */
+    text-align: left; /* Align text to the left */
+    padding-right: 2rem; /* Added right padding to ensure space between text and image */
+}
+
+.education-details h3 {
+    color: #f44336; /* Red color for titles */
+    font-size: 1.7rem;
+    margin-bottom: 1rem;
+    text-align: left; /* Align title to the left */
+}
+
+.education-details p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: white;
+    text-align: left; /* Align text to the left */
+}
+
+.education-gallery {
+    flex: 0.7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery-wrapper {
+    position: relative;
+}
+
+.gallery-photo {
+    width: 100%;
+    height: auto;
+    max-width: 280px; /* Reduced size for better spacing */
+    border-radius: 8px;
+}
+
+.gallery-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.gallery-prev, .gallery-next {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.divider {
+    border-top: 1px solid #f44336; /* Red color for the line */
+    margin: 2rem 0 auto auto;
+    width: 60%; /* Reduced width for a cleaner design */
+}
+
+@media (max-width: 768px) {
+    .education-item {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .education-gallery {
+        margin-top: 1rem;
+    }
+
+    .gallery-photo {
+        max-width: 250px; /* Slightly smaller on smaller screens */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* General Styles for Skills Section */
+#skills {
+    background-color: #121212;
+    padding: 3rem;
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.skill-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    width: 48%;
+    background-color: #1c1c1c;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-top: 1rem;
+}
+
+.skill-icon {
+    margin-right: 20px;
+}
+
+.skill-icon img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.skill-details {
+    flex: 1;
+}
+
+.skill-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.skill-title h3 {
+    color: white; /* Changed to white */
+    font-size: 22px;
+    margin: 0;
+    transition: color 0.3s ease, text-shadow 0.3s ease; /* Transition for hover effect */
+}
+
+.skill-title .percent {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.skill-item:hover .skill-title h3 {
+    color: #f44336; /* Change color to orange when hovered */
+    text-shadow: 0px 0px 5px rgba(244, 67, 54, 0.7); /* Subtle glow effect */
+}
+
+.progress-bar {
+    position: relative;
+    width: 100%;
+    height: 10px;
+    background-color: #ddd; /* Background color for remaining portion */
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.progress-fill {
+    position: absolute;
+    height: 100%;
+    background-color: #f44336; /* Color for filled portion */
+    width: 0; /* This will be controlled by data-percent */
+    border-radius: 10px;
+    transition: width 1s;
+}
+
+/* New Styles to Set Progress Width Dynamically */
+.skill-item .progress-bar[data-percent="80"] .progress-fill {
+    width: 80%;
+}
+
+.skill-item .progress-bar[data-percent="100"] .progress-fill {
+    width: 100%;
+}
+
+.skill-item .progress-bar[data-percent="70"] .progress-fill {
+    width: 70%;
+}
+
+.skill-item .progress-bar[data-percent="90"] .progress-fill {
+    width: 90%;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .skill-item {
+        width: 48%;
+        margin-left: 1%;
+    }
+}
+
+@media (max-width: 768px) {
+    .skill-item {
+        width: 100%;
+        margin-left: 0;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
+    .skill-title {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .skill-title .percent {
+        margin-top: 5px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#work-area {
+    background-color: #121212;
+    padding: 3rem;
+    color: white;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.work-area-container {
+    width: 80%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.work-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1c1c1c;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    opacity: 0;
+    transition: all 0.5s ease;
+    margin-top: 1rem;
+}
+
+.work-item:hover {
+    background-color: #333;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.work-item-content {
+    flex: 1;
+}
+
+.work-item-content h3 {
+    color: #f44336;
+    font-size: 24px;
+    margin-bottom: 1rem;
+}
+
+.work-item-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #ccc;
+}
+
+.work-item-image {
+    width: 40%;
+}
+
+.work-item-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.work-item.left {
+    justify-content: flex-start;
+}
+
+.work-item.center {
+    justify-content: center;
+}
+
+.work-item.right {
+    justify-content: flex-end;
+}
+
+/* Adding transition class */
+.show {
+    opacity: 1 !important;
+}
+
+@media (max-width: 768px) {
+    .work-item {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .work-item-image {
+        width: 80%;
+        margin-top: 1rem;
+    }
+
+    .work-item.left,
+    .work-item.center,
+    .work-item.right {
+        justify-content: center;
+    }
+}
+
+
+
+/* Section Styling */
+.social-media-section {
+    background-color: #121212;
+    padding: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.social-media-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.social-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #1c1c1c;
+    color: white;
+    font-size: 24px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    background-color: #f44336;
+    transform: scale(1.1);
+}
+
+.social-icon i {
+    pointer-events: none; /* Disables pointer events on the icon itself */
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .social-media-container {
+        justify-content: center;
+        gap: 1rem; /* Reduce gap for smaller screens */
+    }
+
+    .social-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .social-media-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        justify-items: center;
+    }
+
+    .social-icon {
+        width: 55px;
+        height: 55px;
+        font-size: 28px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* استایل کلی فوتر */
+.footer {
+    background-color: #121212; /* همان رنگ مشکی برای هماهنگی با هدر */
+    color: white;
+    padding: 4rem 0 0; /* حذف فاصله پایین فوتر */
+    font-family: Arial, sans-serif;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* فقط فوتر رو بالا تنظیم می‌کنیم */
+    min-height: 100px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    flex: 1;
+    margin: 0 20px;
+    min-width: 250px;
+}
+
+.footer-section h3 {
+    color: #f44336; /* رنگ تایتل */
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f44336; /* خط زیر تایتل */
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 10px 0; /* فاصله بیشتر بین لینک‌ها */
+}
+
+.footer-section ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.footer-section ul li a:hover {
+    color: #f44336;
+    text-decoration: underline;
+}
+
+/* فوتر پایین */
+.footer-bottom {
+    background-color: #101010; /* رنگ متفاوت برای آخرین قسمت */
+    color: #bdbdbd;
+    padding: 1rem 0; /* فاصله کمی از بالا */
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 1rem;
+    text-align: center;
+    color: #fff;
+    font-weight: 600;
+}
+
+/* ریسپانسیو فوتر */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .footer-section h3 {
+        font-size: 1.3rem;
+    }
+
+    .footer-section ul li a {
+        font-size: 0.9rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Base Styles for all screens */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+/* Responsive Design for Smaller Screens */
+
+/* موبایل - عرض کمتر از 768 پیکسل */
+@media (max-width: 768px) {
+    /* تنظیمات هدر */
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-top: 1rem;
+    }
+
+    .hero {
+        height: 60vh; /* کاهش ارتفاع در صفحات موبایل */
+        padding: 1rem;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        margin-left: 0;
+        text-align: center; /* وسط‌چین کردن متن در موبایل */
+    }
+
+    .buttons {
+        flex-direction: column; /* دکمه‌ها زیر هم قرار بگیرند */
+        gap: 0.5rem;
+        align-items: center;
+    }
+
+    .btn {
+        width: 100%; /* دکمه‌ها به عرض کامل صفحه */
+        text-align: center;
+    }
+
+    .profile-pic {
+        width: 50px; /* تنظیم اندازه تصویر پروفایل در موبایل */
+        height: 50px;
+    }
+}
+
+/* تبلت - عرض بین 768 و 1024 پیکسل */
+@media (min-width: 769px) and (max-width: 1024px) {
+    header {
+        padding: 1rem 1.5rem;
+    }
+
+    .hero {
+        height: 70vh; /* ارتفاع متناسب برای تبلت */
+        padding: 1.5rem;
+    }
+
+    .hero-content {
+        max-width: 80%;
+        margin-left: 1rem;
+    }
+
+    .btn {
+        padding: 0.5rem 1rem; /* تنظیم اندازه دکمه‌ها برای تبلت */
+    }
+
+    .profile-pic {
+        width: 60px; /* اندازه کمی بزرگتر برای تبلت */
+        height: 60px;
+    }
+}
+
+/* دسکتاپ های کوچک - عرض کمتر از 1200 پیکسل */
+@media (min-width: 1025px) and (max-width: 1200px) {
+    .hero-content {
+        max-width: 450px; /* تنظیم عرض قهرمان برای دسکتاپ های کوچک */
+    }
+}
